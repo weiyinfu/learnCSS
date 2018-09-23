@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centering an inline element with multiple lines vertically</title>
+    <style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+        }
+
+        table {
+            background: white;
+            width: 240px;
+            border-collapse: separate;
+            margin: 20px;
+            height: 250px;
+        }
+
+        table td {
+            background: black;
+            color: white;
+            padding: 20px;
+            border: 10px solid white;
+            /* default is vertical-align: middle; */
+        }
+
+        .center-table {
+            display: table;
+            height: 250px;
+            background: white;
+            width: 240px;
+            margin: 20px;
+        }
+
+        .center-table p {
+            display: table-cell;
+            margin: 0;
+            background: black;
+            color: white;
+            padding: 20px;
+            border: 10px solid white;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<pre>方式一：在table和tr的基础上直接更改</pre>
+<table>
+    <tr>
+        <td>
+            I'm vertically centered multiple lines of text in a real table cell.
+        </td>
+    </tr>
+</table>
+<pre>方式二：直接display：table；使得vertical-align发挥作用</pre>
+<div class="center-table">
+    <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+</div>
+</body>
+</html>

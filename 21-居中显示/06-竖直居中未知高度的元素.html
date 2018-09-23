@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centering a block element with unknown height vertically</title>
+    <style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+        }
+
+        main {
+            background: white;
+            height: 300px;
+            margin: 20px;
+            width: 300px;
+            position: relative;
+            resize: vertical;
+            overflow: auto;
+        }
+
+        main div {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            right: 20px;
+            background: black;
+            color: white;
+            padding: 20px;
+            transform: translateY(-50%);
+            resize: vertical;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    外层div的position使用非static的，内层的position才会认外层元素为
+    父元素。
+    内层div的position设为absolute；表示绝对布局
+    然后内层div的top改为50%；然后transform：translateY(-50%);
+    表示将该元素向上平移50%的自身高度。
+</pre>
+<main>
+    <div>
+        I'm a block-level element with an unknown height, centered vertically within my parent.
+    </div>
+</main>
+</body>
+</html>

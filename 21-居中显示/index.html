@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中显示</title>
+    <script src="index.js"></script>
+</head>
+<body>
+<div id="demos"></div>
+
+</body>
+<script>
+    for (var i = 0; i < s.length; i++) {
+        if (/\d+\-(.*)\.html/.test(s[i])) {
+            var txt = /\d+\-(.*)\.html/.exec(s[i])[1]
+            var a = document.createElement("a")
+            a.href = s[i]
+            a.innerHTML = txt
+            document.querySelector("#demos").appendChild(a)
+            document.querySelector("#demos").appendChild(document.createElement("br"))
+
+        }
+    }
+</script>
+</html>

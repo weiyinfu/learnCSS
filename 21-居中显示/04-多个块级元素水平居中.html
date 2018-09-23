@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centering multiple block elements horizontally</title>
+    <style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+        }
+
+        main {
+            background: white;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        main div {
+            background: black;
+            margin: 5px auto;
+            color: white;
+            padding: 15px;
+        }
+
+        main div:nth-child(1) {
+            width: 200px;
+        }
+
+        main div:nth-child(2) {
+            width: 400px;
+        }
+
+        main div:nth-child(3) {
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+<h3>使用margin:上下间隔 auto;实现多个div水平居中</h3>
+<main>
+    <div>
+        I'm an element that is block-like with my siblings and we're centered in a row.
+    </div>
+    <div>
+        I'm an element that is block-like with my siblings and we're centered in a row. I have more content in me than
+        my siblings do.
+    </div>
+    <div>
+        I'm an element that is block-like with my siblings and we're centered in a row.
+    </div>
+</main>
+</body>
+</html>

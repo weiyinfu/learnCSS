@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Center element with unknown width and height</title>
+    <style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+            padding: 20px;
+        }
+
+        main {
+            position: relative;
+            background: white;
+            height: 200px;
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+
+        main div {
+            background: black;
+            color: white;
+            width: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 20px;
+            resize: both;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<pre>
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+</pre>
+<main>
+    <div>
+        I'm a block-level element of an unknown height and width, centered vertically within my parent.
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centering an inline element with one line vertically</title>
+    <style>
+        body {
+            background: #f06d06;
+            font-size: 80%;
+        }
+
+        main {
+            background: white;
+            margin: 20px 0;
+            padding: 40px;
+        }
+
+        main div {
+            background: black;
+            color: white;
+            /**将line-height设置为height即可*/
+            height: 100px;
+            line-height: 100px;
+            padding: 20px;
+            width: 50%;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div>
+        I'm a centered line.
+    </div>
+</main>
+</body>
+</html>
