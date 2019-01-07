@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>居中显示</title>
     <script src="index.js"></script>
-</head>
-<body>
-<div id="demos"></div>
-
-</body>
-<script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        text-align: center;
+        
+        
+      }
+      #demos {
+        font-size: 20px;
+        justify-content: center;
+        flex-direction: row;
+        display: flex;
+        font-family: 微软雅黑, "Courier New", Courier, monospace;
+      }
+      a{
+          text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demos"></div>
+  </body>
+  <script>
     for (var i = 0; i < s.length; i++) {
-        if (/\d+\-(.*)\.html/.test(s[i])) {
-            var txt = /\d+\-(.*)\.html/.exec(s[i])[1]
-            var a = document.createElement("a")
-            a.href = s[i]
-            a.innerHTML = txt
-            document.querySelector("#demos").appendChild(a)
-            document.querySelector("#demos").appendChild(document.createElement("br"))
-
-        }
+      if (/\d+\-(.*)\.html/.test(s[i])) {
+        var txt = /\d+\-(.*)\.html/.exec(s[i])[1]
+        var a = document.createElement("a")
+        a.href = s[i]
+        a.innerHTML = txt
+        document.querySelector("#demos").appendChild(a)
+        document.querySelector("#demos").appendChild(document.createElement("br"))
+      }
     }
-</script>
+  </script>
 </html>

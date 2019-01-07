@@ -37,6 +37,7 @@ p {
 
 p code, li code {
   background-color: #ECECEC;
+  font-family: Consolas;
 }
 
 h1, h2 {
@@ -167,6 +168,7 @@ h1.content {
 
 .language-css, .language-html {
   display: block;
+  font-family: Consolas;
   text-shadow: 1px 1px 0 black;
   background-color: #333333;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#000000)); /* Safari 4+, Chrome */

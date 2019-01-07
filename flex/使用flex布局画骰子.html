@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+    <style>
+      .box {
+        background-color: #222233;
+        box-shadow: 0px 0 20px inset #eeff00;
+        width: 150px;
+        border-radius: 12px;
+        height: 150px;
+        display: flex;
+        margin: 5px;
+      }
+      .point {
+        background-color: white;
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        flex-shrink: 0;
+      }
+      #info {
+        position: fixed;
+        font-size: 20px;
+        font-family: Consolas;
+        color: white;
+        background: black;
+        box-shadow: 0 0 52px #eeffee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="desc">
+      以任务的形式学习编程能够促进自己主动思考。
+
+      <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank">flex语法</a> <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank">flex实例</a>
+    </div>
+    <br />
+    <hr />
+    <section>
+      <h1>一个点有9种情况</h1>
+      <div style="display:flex;">
+        <div class="box" style="justify-content:flex-start;"><div class="point"></div></div>
+        <div class="box" style="justify-content:center;"><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-end;"><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-start;align-items: center;"><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-end;align-items: center;"><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-end;align-items: center;"><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-start;align-items: flex-end;"><div class="point"></div></div>
+        <div class="box" style="justify-content:center;align-items:flex-end "><div class="point"></div></div>
+        <div class="box" style="justify-content:flex-end;align-items: flex-end;"><div class="point"></div></div>
+      </div>
+    </section>
+    <hr />
+    <section>
+      <h1>两个点</h1>
+      <div style="display:flex;flex-wrap: wrap">
+        <div class="box">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box" style="justify-content:space-between">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box" style="flex-direction: column">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box">
+          <div class="point"></div>
+          <div class="point" style="align-self:center;"></div>
+        </div>
+        <div class="box" style="justify-content:space-between;">
+          <div class="point"></div>
+          <div class="point" style="align-self:center;"></div>
+        </div>
+        <div class="box" style="justify-content:space-between;flex-direction: column">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box" style="justify-content:space-between;flex-direction: column">
+          <div class="point"></div>
+          <div class="point" style="align-self:center"></div>
+        </div>
+        <div class="box" style="justify-content:space-between;flex-direction: column">
+          <div class="point"></div>
+          <div class="point" style="align-self:flex-end"></div>
+        </div>
+      </div>
+      <div style="display:flex">
+        <div class="box" style="justify-content: flex-end">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box" style="justify-content:space-between">
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section>
+      <h1>三个点</h1>
+      <div style="display:flex">
+        <div class="box">
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+        <div class="box">
+          <div class="point"></div>
+          <div class="point" style="align-self:center"></div>
+          <div class="point" style="align-self:flex-end"></div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section>
+      <h1>五个点</h1>
+      <div>
+        <div class="box" style="flex-wrap:wrap">
+          <div style="display:flex;width:100%;justify-content: space-between;">
+            <div class="point"></div>
+            <div class="point"></div>
+          </div>
+          <div style="display:flex;width:100%;justify-content: center;"><div class="point"></div></div>
+          <div style="display:flex;width:100%;justify-content: space-between;">
+            <div class="point"></div>
+            <div class="point"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section>
+      <h1>九个点</h1>
+      <div>
+        <div class="box" style="flex-wrap:wrap">
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+          <div class="point"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <div id="info"></div>
+  </body>
+  <script>
+    function tos(a, ele) {
+      var s = ele.tagName.toLowerCase()
+      if (ele.className) s += " class=" + ele.className + "<br>"
+      else s += "<br>"
+      for (var i in a) {
+        if (i == "length") continue
+        if (i.startsWith("webkit")) continue
+        s += i + ":" + a[i] + "<br>"
+      }
+      return s
+    }
+    function getGoodPos(x, y, ele) {
+      var width = document.body.clientWidth,
+        height = document.body.clientHeight
+      var ans = { left: x, top: y }
+      if (ans.left + ele.clientWidth > width) {
+        ans.left = x - ele.clientWidth
+      }
+      if (ans.top + ele.clientHeight > height) {
+        ans.top = y - ele.clientHeight
+      }
+      return ans
+    }
+    document.body.onmouseover = event => {
+      var a = event.target.style
+      if (event.target.id == "info") {
+        return
+      }
+      var b = {}
+      for (var i in a) {
+        if (typeof i == "number" || i == "cssText" || typeof a[i] == "function" || /^\d+$/.test(i)) continue
+        if (a[i]) {
+          b[i] = a[i]
+        }
+      }
+      var ele = document.querySelector("#info")
+      if (b.length || event.target.className) {
+        ele.innerHTML = tos(b, event.target)
+        var goodPos = getGoodPos(event.clientX, event.clientY, ele)
+        ele.style.left = goodPos.left
+        ele.style.top = goodPos.top
+        ele.style.visibility = true
+      } else {
+        ele.style.visibility = false
+      }
+    }
+  </script>
+</html>
