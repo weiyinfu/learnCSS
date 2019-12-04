@@ -1,0 +1,66 @@
+<html>
+<head>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .cube {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            animation: rotate linear 20s infinite;
+        }
+        @keyframes rotate {
+               0% {
+                   transform: rotateX(0deg) rotateY(0deg);
+               }
+               100% {
+                   transform: rotateX(360deg) rotateY(360deg);
+               }
+           }
+        .cube .out_front {
+            transform: rotateY(0deg) translateZ(60px);
+        }
+        .cube div {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.8;
+            transition: all .4s;
+        }.cube .out_back {
+             transform: translateZ(-60px) rotateY(180deg);
+         }
+        .cube .out_left {
+            transform: rotateY(-90deg) translateZ(60px);
+        }
+        .cube .out_right {
+            transform: rotateY(90deg) translateZ(60px);
+        }
+        .cube .out_top {
+            transform: rotateX(90deg) translateZ(60px);
+        }
+        .cube .out_bottom {
+            transform: rotateX(-90deg) translateZ(60px);
+        }
+    </style>
+</head>
+<body>
+<div class="cube">
+    <div class="out_front"><img src="imgs/cube01.bmp" class="pic"></div>
+    <div class="out_back"><img src="imgs/cube02.bmp" class="pic"></div>
+    <div class="out_left"><img src="imgs/cube03.bmp" class="pic"></div>
+    <div class="out_right"><img src="imgs/cube04.bmp" class="pic"></div>
+    <div class="out_top"><img src="imgs/cube05.bmp" class="pic"></div>
+    <div class="out_bottom"><img src="imgs/cube06.bmp" class="pic">
+    </div>
+</div>
+</body>
+</html>
